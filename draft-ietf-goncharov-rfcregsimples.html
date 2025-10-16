@@ -5,9 +5,27 @@
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
 <title>CBOR Simple Values Range for Packing and Templating</title>
-<meta content="Your Name Here" name="author">
+<meta content="Vadim Goncharov" name="author">
 <meta content="
-       TODO Abstract 
+       TODO
+Updates: 8949
+Category: Draft Standard 
+       The Concise Binary Object Representation (CBOR, RFC 8949 == STD 94)
+is a data format whose design goals include the possibility of
+extremely small code size, fairly small message size, and
+extensibility without the need for version negotiation. 
+       CBOR does not provide any forms of data compression.
+While
+traditional data compression techniques such as DEFLATE (RFC 1951)
+can work well for CBOR encoded data items, their disadvantage is that
+the recipient needs to decompress the compressed form to make use of
+the data. 
+       This document describes a set of CBOR simple values which can be used
+by different specifications utilizing them for CBOR transformations,
+such as compression or templating, in a non-conflicting way.
+This
+allows for future standards to reuse the smallest values range while
+inventing better ways to use them for achieving their goals. 
     " name="description">
 <meta content="xml2rfc 3.30.2" name="generator">
 <meta content="next generation" name="keyword">
@@ -1049,7 +1067,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <td class="right">October 2025</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Here</td>
+<td class="left">Goncharov</td>
 <td class="center">Expires 19 April 2026</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
@@ -1058,7 +1076,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <div id="internal-metadata" class="document-information">
 <dl id="identifiers">
 <dt class="label-workgroup">Workgroup:</dt>
-<dd class="workgroup">WG Working Group</dd>
+<dd class="workgroup">Network Working Group</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
 <dd class="internet-draft">draft-ietf-goncharov-rfcregsimples-latest</dd>
 <dt class="label-published">Published:</dt>
@@ -1072,7 +1090,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dt class="label-authors">Author:</dt>
 <dd class="authors">
 <div class="author">
-      <div class="author-name">Y. N. Here</div>
+      <div class="author-name">V. Goncharov</div>
 <div class="org">Your Organization Here</div>
 </div>
 </dd>
@@ -1081,7 +1099,25 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <h1 id="title">CBOR Simple Values Range for Packing and Templating</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">TODO Abstract<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">TODO
+Updates: 8949
+Category: Draft Standard<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-2">The Concise Binary Object Representation (CBOR, RFC 8949 == STD 94)
+is a data format whose design goals include the possibility of
+extremely small code size, fairly small message size, and
+extensibility without the need for version negotiation.<a href="#section-abstract-2" class="pilcrow">¶</a></p>
+<p id="section-abstract-3">CBOR does not provide any forms of data compression.
+While
+traditional data compression techniques such as DEFLATE (RFC 1951)
+can work well for CBOR encoded data items, their disadvantage is that
+the recipient needs to decompress the compressed form to make use of
+the data.<a href="#section-abstract-3" class="pilcrow">¶</a></p>
+<p id="section-abstract-4">This document describes a set of CBOR simple values which can be used
+by different specifications utilizing them for CBOR transformations,
+such as compression or templating, in a non-conflicting way.
+This
+allows for future standards to reuse the smallest values range while
+inventing better ways to use them for achieving their goals.<a href="#section-abstract-4" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1089,14 +1125,10 @@ svg :is([fill="white"], [fill^="#fff"]) {
       </h2>
 <p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
 <p id="section-note.1-2">
-        The latest revision of this draft can be found at <span><a href="https://example.com/LATEST">https://example.com/LATEST</a></span>.
+        The latest revision of this draft can be found at <span><a href="https://nuclight.github.io/cbor-spec-rfcregsimples/draft-ietf-goncharov-rfcregsimples.html">https://nuclight.github.io/cbor-spec-rfcregsimples/draft-ietf-goncharov-rfcregsimples.html</a></span>.
         Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-ietf-goncharov-rfcregsimples/">https://datatracker.ietf.org/doc/draft-ietf-goncharov-rfcregsimples/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
-<p id="section-note.1-3">
-        Discussion of this document takes place on the
-        WG Working Group mailing list (<span><a href="mailto:WG@example.com">mailto:WG@example.com</a></span>),
-        which is archived at <span><a href="https://example.com/WG">https://example.com/WG</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
-<p id="section-note.1-4">Source for this draft and an issue tracker can be found at
-        <span><a href="https://github.com/USER/REPO">https://github.com/USER/REPO</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
+<p id="section-note.1-3">Source for this draft and an issue tracker can be found at
+        <span><a href="https://github.com/nuclight/cbor-spec-rfcregsimples">https://github.com/nuclight/cbor-spec-rfcregsimples</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1147,55 +1179,372 @@ svg :is([fill="white"], [fill^="#fff"]) {
         </h2>
 <nav class="toc"><ul class="compact toc ulBare ulEmpty">
 <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.1">
-            <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-introduction" class="internal xref">Introduction</a></p>
+            <p id="section-toc.1-1.1.1" class="keepWithNext"><a href="#section-1" class="auto internal xref">1</a>.  <a href="#name-terminology-and-conventions" class="internal xref">Terminology and Conventions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.2">
-            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
+            <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-motivation" class="internal xref">Motivation</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+            <p id="section-toc.1-1.3.1"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-specification" class="internal xref">Specification</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.1">
+                <p id="section-toc.1-1.3.2.1.1" class="keepWithNext"><a href="#section-3.1" class="auto internal xref">3.1</a>.  <a href="#name-interoperability" class="internal xref">Interoperability</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3.2.2">
+                <p id="section-toc.1-1.3.2.2.1"><a href="#section-3.2" class="auto internal xref">3.2</a>.  <a href="#name-validity-checking" class="internal xref">Validity checking.</a></p>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
             <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
-            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-references" class="internal xref">References.</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
 </li>
         </ul>
 </nav>
 </section>
 </div>
-<div id="introduction">
+<div id="terminology-and-conventions">
 <section id="section-1">
-      <h2 id="name-introduction">
-<a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
+      <h2 id="name-terminology-and-conventions">
+<a href="#section-1" class="section-number selfRef">1. </a><a href="#name-terminology-and-conventions" class="section-name selfRef">Terminology and Conventions</a>
       </h2>
-<p id="section-1-1">TODO Introduction<a href="#section-1-1" class="pilcrow">¶</a></p>
-</section>
-</div>
-<div id="conventions-and-definitions">
-<section id="section-2">
-      <h2 id="name-conventions-and-definitions">
-<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-conventions-and-definitions" class="section-name selfRef">Conventions and Definitions</a>
-      </h2>
-<p id="section-2-1">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
+<p id="section-1-1">The key words "<span class="bcp14">MUST</span>", "<span class="bcp14">MUST NOT</span>", "<span class="bcp14">REQUIRED</span>", "<span class="bcp14">SHALL</span>", "<span class="bcp14">SHALL NOT</span>", "<span class="bcp14">SHOULD</span>", "<span class="bcp14">SHOULD NOT</span>", "<span class="bcp14">RECOMMENDED</span>", "<span class="bcp14">NOT RECOMMENDED</span>",
 "<span class="bcp14">MAY</span>", and "<span class="bcp14">OPTIONAL</span>" in this document are to be interpreted as
 described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</span> <span>[<a href="#RFC8174" class="cite xref">RFC8174</a>]</span> when, and only when, they
-appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
+appear in all capitals, as shown here.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">TBD any other terminology needed here?..<a href="#section-1-2" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="security-considerations">
-<section id="section-3">
-      <h2 id="name-security-considerations">
-<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+<div id="motivation">
+<section id="section-2">
+      <h2 id="name-motivation">
+<a href="#section-2" class="section-number selfRef">2. </a><a href="#name-motivation" class="section-name selfRef">Motivation</a>
       </h2>
-<p id="section-3-1">TODO Security<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-2-1">In a world of constrained devices (IoT) such devices are often have
+very little memory.
+While these devices are also constrained in
+e.g. packet size so that compression is very desirable.
+Traditional
+generic compression algorithms like DEFLATE [RFC1951] perform well
+but require memory both for decompressed data and internal state of
+decompressor itself.
+Many constrained implementations would want to
+trade-off between compression ratio and required memory - tolerating
+worse compression by lowering memory usage, ideally to zero bytes
+(that is, using compressed data in-place as-is).
+In the ongoing IETF
+efforts the "MyLED" example in JSON [MyLED] takes 1210 bytes
+converted to CBOR which may be further reduced to about 350 bytes
+using DEFLATE, but this require more than 1.5 Kbytes of memory during
+decompression - in contrast, work in progress specifications like
+[draft-cbor-packed] and [CBAR] are able to reduce this example to
+about 500 bytes, however accessible in-place, without need for
+decompression buffer at all.<a href="#section-2-1" class="pilcrow">¶</a></p>
+<p id="section-2-2">Sixteen simple values were intended to be used for compression
+purposes in the original CBOR proposal, but didn't get into the
+standard at the time being due to the complexity of the task.
+Since
+then, more than one proposal for compression techniques has appeared.
+While the usual way for Internet specifications is to acquire
+different codepoints (or ranges of them) from IANA, this does not
+work well in the compression world given the specifics of CBOR
+encoding - that is, different numbers are encoded in CBOR occupying
+different number of bytes.
+Compression efficiency, however, is very
+sensitive to length of codes used - the shorter is better.
+Thus,
+registration of short codes range for one standard exclusively would
+put other standards - especially future standards - into inequal and
+unfair position if there are no more short codes left for them.
+However, it is known that future inventions tend to be more effective
+in usage of same resources but are impossible to predict at the time
+of prior standard issued (otherwise enhancements would be already
+incorporated into it).
+As (at the time of writing) there are only 20
+single-byte CBOR simple values available for registration, such
+situation can happen with just the first standard accepted.<a href="#section-2-2" class="pilcrow">¶</a></p>
+<p id="section-2-3">Therefore, this document registers first sixteen CBOR simple values
+(0 to 15) in such a way that they could be used by different
+compression methods (different specifications), both existing and not
+yet invented.
+The way for decoder to distinguish them - that is, to
+interpret according to one specification or another - is done via
+CBOR Tag (acting as a "namespace") or by external means such as
+messages' media type.<a href="#section-2-3" class="pilcrow">¶</a></p>
+<p id="section-2-4">This range registration is similar in spirit to [RFC 4251] allocating
+a range of message numbers e.g. 30 to 49 to be key exchange method
+specific, stating that numbers can be reused for different
+authentication methods - and examples of specifications using such
+range are [RFC 4419], [RFC 4432] or [RFC 5656].<a href="#section-2-4" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="specification">
+<section id="section-3">
+      <h2 id="name-specification">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-specification" class="section-name selfRef">Specification</a>
+      </h2>
+<p id="section-3-1">This document registers CBOR values simple(0) to simple(15) for needs
+like packing or templating CBOR documents.<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">Following spirit of [RFC 4251], this specification could just declare
+this range to be packing/templating method specific (so text could
+end right here), but this would not be very useful to CBOR parsers
+implementers in terms of what could be expected from these values or
+what kind of changes may specific packing/templating methods require
+in their parsers.
+So in the text below we take slightly another approach.<a href="#section-3-2" class="pilcrow">¶</a></p>
+<p id="section-3-3">This specification tries, speaking in object-oriented terms, to be
+the "Abstract Base Class" for other specifications to "inherit", in
+the sense of describing meaning as broad as possible, but concrete
+specifications do not need to implement every imaginable feature and
+<span class="bcp14">MAY</span> choose to define only subset.<a href="#section-3-3" class="pilcrow">¶</a></p>
+<p id="section-3-4">Application protocols using CBOR simple values in 0..15 range, or
+generic packing/templating specifications, should include reference
+to this RFC about using range and then describe precise usage of
+these simple values.<a href="#section-3-4" class="pilcrow">¶</a></p>
+<p id="section-3-5">The semantics of these simple values 0 to 15 is that they are
+substitutions for one or several other CBOR items.
+That is, when
+decoder sees values simple(0) to simple(15), it treats them as some
+mapping function (0 to 15 may be viewed as argument here) which takes
+argument and, depending on current decoder state, returns CBOR
+item(s) to substitute instead of simple value, as if simple value
+never occured in the stream, but returned CBOR item(s) occured
+instead.<a href="#section-3-5" class="pilcrow">¶</a></p>
+<p id="section-3-6">Such mapping function may be very complex, taking into account even
+surrounding CBOR items context to decide.
+Or (especially expected
+for short-term solutions) "inheriting" specification may choose it
+to be rather simple, for example, simple(0)..simple(15) could be
+references (indexes) to some (kept by decoding process) table, or
+part of such table, so that instead of simple value an integral
+number of CBOR items is substituted from table entry.
+Note that this
+replacement items do not necessarily form a complete well-formed CBOR
+item if viewed separately as entry in the table. For example,
+a sequence<a href="#section-3-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-3-7">
+<pre>
+  [..., 1, 2, simple(2), "a", "b", "c", ...]
+</pre><a href="#section-3-7" class="pilcrow">¶</a>
+</div>
+<p id="section-3-8">could expand to<a href="#section-3-8" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-3-9">
+<pre>
+  [..., 1, 2, ["foo", "bar", "a"], "b", "c", ...]
+</pre><a href="#section-3-9" class="pilcrow">¶</a>
+</div>
+<p id="section-3-10">if the entry for simple(2) at this moment contained definite-length
+array start item (0x83) and two string items "foo" and "bar".<a href="#section-3-10" class="pilcrow">¶</a></p>
+<p id="section-3-11">(Informally speaking, this could be described as "cut" in text editor
+a whole number of tokens (counting each string, brace, etc. as one
+token) in CBOR diagnostic notation and then "paste" it instead of
+each simple(N) occurrence).<a href="#section-3-11" class="pilcrow">¶</a></p>
+<p id="section-3-12">Please note that "surrounding CBOR items context" (if specification
+goes complex way) may include e.g. absolute or relative position of
+simple value.
+In the (imaginary non-normative) example:<a href="#section-3-12" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-3-13">
+<pre>
+  10([simple(0), 16, "atom1",
+     {
+       "foo": simple(0),
+       "bar": 10([simple(0), 16, "otheratom",
+                 {
+                    "baz": simple(0),
+                    "quux": 10(122(0))
+                 }
+              ])
+     }
+  ])
+</pre><a href="#section-3-13" class="pilcrow">¶</a>
+</div>
+<p id="section-3-14">the simple(0) at the very start of array expands to "function-name",
+but same simple(0) as the map value expands to (presumably) "atom1"
+under "foo" key and to "otheratom" under "baz" key.
+That is, if
+packing method specification chooses "index in table" approach, there
+could be several such tables.<a href="#section-3-14" class="pilcrow">¶</a></p>
+<p id="section-3-15">Even more, "surrounding context" usage is not prohibited from
+explicit arguments and their "swallowing" after substitution, for
+example, in<a href="#section-3-15" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-3-16">
+<pre>
+  [..., 1, 2, "arg1", "arg2", simple(2), 3, ...]
+</pre><a href="#section-3-16" class="pilcrow">¶</a>
+</div>
+<p id="section-3-17">or<a href="#section-3-17" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-3-18">
+<pre>
+  [..., 1, 2, simple(2), "arg1", "arg2", 3, ...]
+</pre><a href="#section-3-18" class="pilcrow">¶</a>
+</div>
+<p id="section-3-19">simple(2) could be viewed as a function call telling to use 2
+arguments from surrounding CBOR items, and then do something based
+on "arg1" and "arg2", so probably the whole triple will be replaced
+by function return value, not just simple(N) itself:<a href="#section-3-19" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-3-20">
+<pre>
+  [..., 1, 2, {"substituted": "sequence"}, ['frobnicate'], 3, ...]
+</pre><a href="#section-3-20" class="pilcrow">¶</a>
+</div>
+<p id="section-3-21">However, such advanced usage is <span class="bcp14">NOT RECOMMENDED</span> for generic
+specifications because it is hard to do it right with generic CBOR
+parsers if such parsers are streaming / event-based.  (This may be
+not true for application-specific parsers in application-specific
+packing/templating methods.)<a href="#section-3-21" class="pilcrow">¶</a></p>
+<p id="section-3-22">Therefore, as usage of simple(0)..simple(15) can modify structure of
+CBOR document, they <span class="bcp14">SHOULD</span> be treated as error if used outside of an
+area where table (or part of such table) is not set up, e.g. outside
+of "namespace" tag or implied by media type.
+Exact mechanism to setup
+such tables (or modify it so that same simple value may expand to
+different content in different parts of CBOR stream) is left for
+definition by application protocol, or an application protocol may
+"inherit" it (implemented in a library) from generic specification
+from appropriate IETF RFC document (such as [draft-cbor-packed]).<a href="#section-3-22" class="pilcrow">¶</a></p>
+<div id="interoperability">
+<section id="section-3.1">
+        <h3 id="name-interoperability">
+<a href="#section-3.1" class="section-number selfRef">3.1. </a><a href="#name-interoperability" class="section-name selfRef">Interoperability</a>
+        </h3>
+<p id="section-3.1-1">Note that it is straightforward to have usage of simple values of
+different compression/templating specifications in the
+non-overlapping areas of a single CBOR document, because the primary
+method for specifications to manifest themselves is via using some
+CBOR Tag(s) as a "namespace" ("area"), like in this example:<a href="#section-3.1-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-3.1-2">
+<pre>
+  {
+    "foo": 55510([..., simple(1), /meaning by spec 1/ ...]),
+    "bar": 55513([..., simple(1), /meaning by spec 2/ ...])
+  }
+</pre><a href="#section-3.1-2" class="pilcrow">¶</a>
+</div>
+<p id="section-3.1-3">(the tag numbers here are fictitious to be used just as an example).<a href="#section-3.1-3" class="pilcrow">¶</a></p>
+<p id="section-3.1-4">Tag nesting, however, which could be used for things like providing
+output of one decompression phase (by one specification) as input for
+another (by same or different specification) is more complicated case
+details of which are left out from this document to be defined by
+actual specifications.
+It is noted here for specifications' authors
+that possibility of such multi-phase (nested) processing is the
+reason for a "should" requirement above instead of "must" because
+simple values (of 0..15 range) produced as a result one phase may be
+fed to a different decoder.<a href="#section-3.1-4" class="pilcrow">¶</a></p>
+<p id="section-3.1-5">Here, only some basic principle for tag nesting is defined: packing
+method tag <span class="bcp14">MUST NOT</span> be used as outer if it does not support
+preserving non-own simple values after applying it's transformations
+(unpacking).
+This is best illustrated by example: suppose that
+for imaginary tags above, specification of tag 55510 supports such
+preserving (in example, it will list integers corresponding to simple
+numbers and values corresponding to them) by leaving them as-is, and
+specification of tag 55513 uses simplistic implementation where
+simple(N) is just index N into table.
+Then, the following example is valid:<a href="#section-3.1-5" class="pilcrow">¶</a></p>
+<p id="section-3.1-6">    55510([10, "foo", 11, "bar", 12, "baz", /* outer tag's setup <em>/
+         /</em> outer tag's transformed data area <em>/
+         55513([                                    /</em> inner tag's <em>/
+            ["rgbValue", "rgbValueRed", "rgbValueGreen"], /</em> setup <em>/
+            [/</em> inner tag's transformed data area */
+               simple(0), simple(1), simple(2), simple(10),
+               simple(0), simple(1), simple(2), simple(11),
+               simple(0), simple(1), simple(2), simple(12)
+            ]
+         ])
+      ])<a href="#section-3.1-6" class="pilcrow">¶</a></p>
+<p id="section-3.1-7">As tags are processed from outside to inside, decoder of tag 55510
+will make this fragment equivalent to:<a href="#section-3.1-7" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-3.1-8">
+<pre>
+  55513([                                    /* inner tag's */
+     ["rgbValue", "rgbValueRed", "rgbValueGreen"], /* setup */
+     [/* inner tag's transformed data area */
+        simple(0), simple(1), simple(2), "foo",
+        simple(0), simple(1), simple(2), "bar",
+        simple(0), simple(1), simple(2), "baz"
+     ]
+  ])
+</pre><a href="#section-3.1-8" class="pilcrow">¶</a>
+</div>
+<p id="section-3.1-9">which decoder of tag 55513 finally turns into unpacked form:<a href="#section-3.1-9" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-3.1-10">
+<pre>
+  [
+     "rgbValue", "rgbValueRed", "rgbValueGreen", "foo",
+     "rgbValue", "rgbValueRed", "rgbValueGreen", "bar",
+     "rgbValue", "rgbValueRed", "rgbValueGreen", "baz"
+  ]
+</pre><a href="#section-3.1-10" class="pilcrow">¶</a>
+</div>
+<p id="section-3.1-11">However, the opposite is not possible because specification of tag
+55513 does not make exceptions.
+The following example is NOT valid:<a href="#section-3.1-11" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-3.1-12">
+<pre>
+  55513([                                    /* outer tag's */
+     ["rgbValue", "rgbValueRed", "rgbValueGreen"], /* setup */
+     /* outer tag's transformed data area */
+     55510([10, "foo", 11, "bar", 12, "baz", /* inner setup */
+        [/* inner tag's transformed data area */
+           simple(0), simple(1), simple(2), simple(10),
+           simple(0), simple(1), simple(2), simple(11),
+           simple(0), simple(1), simple(2), simple(12)
+        ]
+     ])
+  ])
+</pre><a href="#section-3.1-12" class="pilcrow">¶</a>
+</div>
+</section>
+</div>
+<div id="validity-checking">
+<section id="section-3.2">
+        <h3 id="name-validity-checking">
+<a href="#section-3.2" class="section-number selfRef">3.2. </a><a href="#name-validity-checking" class="section-name selfRef">Validity checking.</a>
+        </h3>
+<p id="section-3.2-1">Please note that the whole concept of CBOR document transformation,
+be it packing or templating, means that, in general case, it is
+not safe to do validity-checks even on known tags as described by
+Section 5.3.2 of [RFC 8949].
+For example, Tag 32 means URI and
+requires text string as a content.
+However, the goal of packing is
+to reduce redundant information, which may mean replacing such text
+string with simple value, raising possibility of the following
+example:<a href="#section-3.2-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-3.2-2">
+<pre>
+  55513([..., 32(simple(1)), ...]
+</pre><a href="#section-3.2-2" class="pilcrow">¶</a>
+</div>
+<p id="section-3.2-3">which would be considered as error by validity-checking decoder.<a href="#section-3.2-3" class="pilcrow">¶</a></p>
+<p id="section-3.2-4">Note that Section 5.4 of [RFC 8949] does not cover this case, because
+it is focused on evolution, however, with packing mechanisms this may
+occur with not new but already known, stable tags.<a href="#section-3.2-4" class="pilcrow">¶</a></p>
+<p id="section-3.2-5">Therefore, this document updates Section 5.4 of [RFC 8949] dictating
+that generic decoders performing validity-checking <span class="bcp14">MUST</span> provide a
+way to disable this validity-checking.
+Note that a mode, where
+decoder knows packing method and postpones validity-checking after
+unpacking, is possible - but is not sufficient because newer
+specifications, yet unknown to such decoder, may appear in the future
+after it's deployment.<a href="#section-3.2-5" class="pilcrow">¶</a></p>
+</section>
+</div>
 </section>
 </div>
 <div id="iana-considerations">
@@ -1203,13 +1552,127 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
       <h2 id="name-iana-considerations">
 <a href="#section-4" class="section-number selfRef">4. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-4-1">This document has no IANA actions.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-4-1">In the registry "CBOR Simple Values" [IANA.cbor-simple-values], IANA
+is requested to allocate the simple values defined in Table 1.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-4-2">
+<pre>
+   +=======+===================================+===========+
+   | Value | Semantics                         | Reference |
+   +=======+===================================+===========+
+   | 0..15 | Packing and templating: shared by | RFC 9NNN  |
+   |       | multiple specifications           |           |
+   +-------+-----------------------------------+-----------+
+
+                      Table 1: Simple Values
+</pre><a href="#section-4-2" class="pilcrow">¶</a>
+</div>
+</section>
+</div>
+<div id="security-considerations">
+<section id="section-5">
+      <h2 id="name-security-considerations">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+      </h2>
+<p id="section-5-1">The security considerations of [STD94] apply.<a href="#section-5-1" class="pilcrow">¶</a></p>
+<p id="section-5-2">If the specification chooses to implement generic non-well-formed
+entries in table (modifying CBOR structure as in example above), care
+must be taken to avoid implementation bugs potentially leading to
+out-of-bounds accesses.<a href="#section-5-2" class="pilcrow">¶</a></p>
+<p id="section-5-3">Specifications must decide what to do with possibility of decoding
+loops or infinite recursion, for example, if table entry for
+simple(M) includes another simple(N) values which then may be
+expanded recursively.  Possible ways are either to not expand it at
+all, allowing for aforementioned multi-phase processing, or provide
+counter-measures similar to symlink processing in filesystems, or
+something else.<a href="#section-5-3" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="references">
+<section id="section-6">
+      <h2 id="name-references">
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-references" class="section-name selfRef">References.</a>
+      </h2>
+<p id="section-6-1">TODO move it in YAML where appropriate<a href="#section-6-1" class="pilcrow">¶</a></p>
+<p id="section-6-2">```
+6.1. Normative References<a href="#section-6-2" class="pilcrow">¶</a></p>
+<p id="section-6-3">[BCP14]    Best Current Practice 14,
+              <a href="https://www.rfc-editor.org/info/bcp14">https://www.rfc-editor.org/info/bcp14</a>.
+              At the time of writing, this BCP comprises the following:<a href="#section-6-3" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-6-4">
+<pre>
+          Bradner, S., "Key words for use in RFCs to Indicate
+          Requirement Levels", BCP 14, RFC 2119,
+          DOI 10.17487/RFC2119, March 1997,
+          &lt;https://www.rfc-editor.org/info/rfc2119&gt;.
+
+          Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
+          2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
+          May 2017, &lt;https://www.rfc-editor.org/info/rfc8174&gt;.
+</pre><a href="#section-6-4" class="pilcrow">¶</a>
+</div>
+<p id="section-6-5">[IANA.cbor-simple-values]
+              IANA, "Concise Binary Object Representation (CBOR) Simple
+              Values",
+              <a href="https://www.iana.org/assignments/cbor-simple-values">https://www.iana.org/assignments/cbor-simple-values</a>.<a href="#section-6-5" class="pilcrow">¶</a></p>
+<p id="section-6-6">[STD94]    Internet Standard 94,
+              <a href="https://www.rfc-editor.org/info/std94">https://www.rfc-editor.org/info/std94</a>.
+              At the time of writing, this STD comprises the following:<a href="#section-6-6" class="pilcrow">¶</a></p>
+<div class="alignLeft art-text artwork" id="section-6-7">
+<pre>
+          Bormann, C. and P. Hoffman, "Concise Binary Object
+          Representation (CBOR)", STD 94, RFC 8949,
+          DOI 10.17487/RFC8949, December 2020,
+          &lt;https://www.rfc-editor.org/info/rfc8949&gt;.
+</pre><a href="#section-6-7" class="pilcrow">¶</a>
+</div>
+<p id="section-6-8">[I-D.ietf-cbor-packed]
+              Bormann, C. and M. Gütschow, "Packed CBOR", Work in
+              Progress, Internet-Draft, draft-ietf-cbor-packed-13, 1
+              September 2024, &lt;https://datatracker.ietf.org/doc/html/
+              draft-ietf-cbor-packed-13&gt;.<a href="#section-6-8" class="pilcrow">¶</a></p>
+<p id="section-6-9">6.2. Informative References<a href="#section-6-9" class="pilcrow">¶</a></p>
+<p id="section-6-10">[RFC1951]  Deutsch, P., "DEFLATE Compressed Data Format Specification
+              version 1.3", RFC 1951, DOI 10.17487/RFC1951, May 1996,
+              <a href="https://www.rfc-editor.org/rfc/rfc1951">https://www.rfc-editor.org/rfc/rfc1951</a>.<a href="#section-6-10" class="pilcrow">¶</a></p>
+<p id="section-6-11">[RFC4251]  Ylonen, T. and C. Lonvick, Ed., "The Secure Shell
+              (SSH) Protocol Architecture", RFC 4251, January 2006.<a href="#section-6-11" class="pilcrow">¶</a></p>
+<p id="section-6-12">[RFC4419]  Friedl, M., Provos, N., and W. Simpson, "Diffie-
+              Hellman Group Exchange for the Secure Shell (SSH)
+              Transport Layer Protocol", RFC 4419, March 2006.<a href="#section-6-12" class="pilcrow">¶</a></p>
+<p id="section-6-13">[RFC4432]  Harris, B., "RSA Key Exchange for the Secure Shell
+              (SSH) Transport Layer Protocol", RFC 4432, March 2006.<a href="#section-6-13" class="pilcrow">¶</a></p>
+<p id="section-6-14">[RFC5656]  Stebila, D. and J. Green, "Elliptic Curve Algorithm
+              Integration in the Secure Shell Transport Layer",
+              RFC 5656, December 2009.<a href="#section-6-14" class="pilcrow">¶</a></p>
+<p id="section-6-15">[MyLED]    &lt;https://github.com/w3c/wot-thing-description/raw/
+              db8abb3655afc7f149db7976ba4e79149619f537/test-bed/data/
+              plugfest/2017-05-osaka/MyLED_f.jsonld&gt;<a href="#section-6-15" class="pilcrow">¶</a></p>
+<p id="section-6-16">[CBAR]     Goncharov, V., "CBOR &amp; generic BLOB by-Atoms Reducing",
+              Work in Progress,
+              <a href="https://github.com/nuclight/musctp/blob/main/cbar.txt">https://github.com/nuclight/musctp/blob/main/cbar.txt</a><a href="#section-6-16" class="pilcrow">¶</a></p>
+<ol start="1" type="1" class="normal type-1" id="section-6-17">
+<li id="section-6-17.1">
+          <p id="section-6-17.1.1">Authors' Addresses<a href="#section-6-17.1.1" class="pilcrow">¶</a></p>
+<p id="section-6-17.1.2">
+Carsten Bormann
+Universität Bremen TZI
+Postfach 330440
+D-28359 Bremen
+Germany
+Phone: +49-421-218-63921
+Email: cabo@tzi.org<a href="#section-6-17.1.2" class="pilcrow">¶</a></p>
+<p id="section-6-17.1.3">
+Vadim Goncharov
+Email: vadimnuclight@gmail.com
+```<a href="#section-6-17.1.3" class="pilcrow">¶</a></p>
+</li>
+      </ol>
 </section>
 </div>
 <div id="sec-normative-references">
-<section id="section-5">
+<section id="section-7">
       <h2 id="name-normative-references">
-<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
       </h2>
 <dl class="references">
 <dt id="RFC2119">[RFC2119]</dt>
@@ -1237,11 +1700,11 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 <a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
       </h2>
 <address class="vcard">
-        <div dir="auto" class="left"><span class="fn nameRole">Your Name Here</span></div>
+        <div dir="auto" class="left"><span class="fn nameRole">Vadim Goncharov</span></div>
 <div dir="auto" class="left"><span class="org">Your Organization Here</span></div>
 <div class="email">
 <span>Email:</span>
-<a href="mailto:your.email@example.com" class="email">your.email@example.com</a>
+<a href="mailto:vadimnuclight@gmail.com" class="email">vadimnuclight@gmail.com</a>
 </div>
 </address>
 </section>
