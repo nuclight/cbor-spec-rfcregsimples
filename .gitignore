@@ -18,7 +18,7 @@
 /versioned/
 Gemfile.lock
 archive.json
-draft-ietf-goncharov-rfcregsimples.xml
+draft-goncharov-rfcregsimples.xml
 package-lock.json
 report.xml
 !requirements.txt

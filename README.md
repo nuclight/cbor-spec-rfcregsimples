@@ -2,12 +2,12 @@
 
 # CBOR Simple Values Range for Packing and Templating
 
-This is the working area for the IETF [GONCHAROV Working Group](https://datatracker.ietf.org/group/goncharov/documents/) Internet-Draft, "CBOR Simple Values Range for Packing and Templating".
+This is the working area for the individual Internet-Draft, "A CBOR Simple Values Range for Packing and Templating".
 
-* [Editor's Copy](https://nuclight.github.io/cbor-spec-rfcregsimples/#go.draft-ietf-goncharov-rfcregsimples.html)
-* [Datatracker Page](https://datatracker.ietf.org/doc/draft-ietf-goncharov-rfcregsimples)
-* [Working Group Draft](https://datatracker.ietf.org/doc/html/draft-ietf-goncharov-rfcregsimples)
-* [Compare Editor's Copy to Working Group Draft](https://nuclight.github.io/cbor-spec-rfcregsimples/#go.draft-ietf-goncharov-rfcregsimples.diff)
+* [Editor's Copy](https://nuclight.github.io/cbor-spec-rfcregsimples/#go.draft-goncharov-rfcregsimples.html)
+* [Datatracker Page](https://datatracker.ietf.org/doc/draft-goncharov-rfcregsimples)
+* [Individual Draft](https://datatracker.ietf.org/doc/html/draft-goncharov-rfcregsimples)
+* [Compare Editor's Copy to Individual Draft](https://nuclight.github.io/cbor-spec-rfcregsimples/#go.draft-goncharov-rfcregsimples.diff)
 
 
 ## Contributing
