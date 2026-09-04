@@ -26,7 +26,7 @@ venue:
 author:
  -
     fullname: "Vadim Goncharov"
-    organization: Your Organization Here
+    organization: Consultant
     email: "vadimnuclight@gmail.com"
 
 normative:
@@ -260,7 +260,7 @@ CBOR Tag(s) as a "namespace" ("area"), like in this example:
 
       {
         "foo": 55510([..., simple(1), /meaning by spec 1/ ...]),
-	"bar": 55513([..., simple(1), /meaning by spec 2/ ...])
+        "bar": 55513([..., simple(1), /meaning by spec 2/ ...])
       }
 
 (the tag numbers here are fictitious to be used just as an example).
@@ -291,7 +291,7 @@ Then, the following example is valid:
       55510([10, "foo", 11, "bar", 12, "baz", /* outer tag's setup */
          /* outer tag's transformed data area */
          55513([                                    /* inner tag's */
-	    ["rgbValue", "rgbValueRed", "rgbValueGreen"], /* setup */
+            ["rgbValue", "rgbValueRed", "rgbValueGreen"], /* setup */
             [/* inner tag's transformed data area */
                simple(0), simple(1), simple(2), simple(10),
                simple(0), simple(1), simple(2), simple(11),
@@ -327,7 +327,7 @@ The following example is NOT valid:
       55513([                                    /* outer tag's */
          ["rgbValue", "rgbValueRed", "rgbValueGreen"], /* setup */
          /* outer tag's transformed data area */
-	 55510([10, "foo", 11, "bar", 12, "baz", /* inner setup */
+         55510([10, "foo", 11, "bar", 12, "baz", /* inner setup */
             [/* inner tag's transformed data area */
                simple(0), simple(1), simple(2), simple(10),
                simple(0), simple(1), simple(2), simple(11),
@@ -335,6 +335,8 @@ The following example is NOT valid:
             ]
          ])
       ])
+
+TODO 05.12.25 15:00 outside of namespace tag - for CBOR Sequences
 
 ## Validity checking.
 
@@ -459,11 +461,11 @@ TODO move it in YAML where appropriate
 
    [MyLED]    <https://github.com/w3c/wot-thing-description/raw/
               db8abb3655afc7f149db7976ba4e79149619f537/test-bed/data/
-	      plugfest/2017-05-osaka/MyLED_f.jsonld>
+              plugfest/2017-05-osaka/MyLED_f.jsonld>
 
    [CBAR]     Goncharov, V., "CBOR & generic BLOB by-Atoms Reducing",
               Work in Progress,
-	      <https://github.com/nuclight/musctp/blob/main/cbar.txt>
+              <https://github.com/nuclight/musctp/blob/main/cbar.txt>
 
 7. Authors' Addresses
 
@@ -485,3 +487,13 @@ TODO move it in YAML where appropriate
 {:numbered="false"}
 
 TODO acknowledge.
+
+
+TBD for 04.12.25 meeting:
+* 31(undefined)
+* move tags from 240-255 to release space for abbreviations
+* 'As the unpacking is deterministic ... CDE' is not fully true for all goals
+* record tag - yet another form of tables?
+* tags in simples?
+* dns-cbor: subj "slides on DNS/packed for 2025-05-14 interim" still unresolved
+
